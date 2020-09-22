@@ -40,12 +40,13 @@
 
             <main class="contato-form">
                 <h1>Entre em contato</h1>
-                <form action="">
-                    <input type="text" placeholder="Nome">
-                    <input type="text" placeholder="Assunto">
-                    <input type="text" placeholder="Email">
-                    <textarea name="mensagem" id="message" cols="50" rows="10" placeholder="sua mensagem..."></textarea>
-                    <input type="button" value="Enviar" onclick="" id="button" >
+                <form name="validacao" action="">
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="text" name="subject" placeholder="Assunto" required>
+                    <input type="text" name="email" placeholder="Email" onblur="validacaoEmail(validacao.email)" required>
+                    <div id="msgemail"></div>
+                    <textarea name="message" id="message" cols="50" rows="10" placeholder="sua mensagem..." required></textarea>
+                    <input type="submit" value="Enviar" id="button" >
                 </form>
 
             </main>
@@ -55,5 +56,7 @@
                     &copy;Criado por CES</p>
             </footer>
         </div>
+
+        <script src="script.js"></script>
     </body>
 </html>
